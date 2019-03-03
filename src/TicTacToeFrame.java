@@ -79,6 +79,14 @@ public class TicTacToeFrame extends JFrame {
         }
 
     }
+    private void togglePlayer() {
+        if (currentPlayer.equals("X")){
+            currentPlayer = "O";
+        } else{
+            currentPlayer = "X";
+
+        }
+    }
     class ClickListener implements ActionListener
     {
 
@@ -86,7 +94,8 @@ public class TicTacToeFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent a)
         {
-            System.out.println("Button Clicked!");
+            TicTacToeTile tile = (TicTacToeTile) a.getSource();
+            tile.setText(currentPlayer);
 
         }
     }
